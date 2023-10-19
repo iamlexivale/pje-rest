@@ -21,4 +21,19 @@ class CategoryController {
         categoryService.findById(id)
     }
 
+    @PostMapping()
+    Category save(@RequestBody Category category) {
+        categoryService.save(category)
+    }
+
+    @PutMapping('{id}')
+    Category update(@RequestBody Category category, @PathVariable('id') int id) {
+        categoryService.update(category, id)
+    }
+
+    @DeleteMapping('{id}')
+    Category delete(@PathVariable('id') int id) {
+        categoryService.delete(id)
+    }
+
 }
